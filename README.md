@@ -1,6 +1,6 @@
 # Apache Cordova Facebook Plugin
 
-This is a fork of the official plugin for Facebook in Apache Cordova/PhoneGap! I made it to fix issues with iOS 9 with respect to App Transport Security and [canOpenURL](https://developer.apple.com/videos/wwdc/2015/?id=703). Also see Wizcorp#1116. It basically adds the necessary config to your plist. It does not solve the issues with Bitcode. So in addition to using this you should for the moment disable bitcode compilation in XCode.
+This is a fork of the official plugin for Facebook in Apache Cordova/PhoneGap! I made it to fix issues with iOS 9 with respect to App Transport Security and [canOpenURL](https://developer.apple.com/videos/wwdc/2015/?id=703). Also see the [issue on Github](https://github.com/Wizcorp/phonegap-facebook-plugin/issues/1116). It basically adds the necessary config to your plist. It does not solve the issues with Bitcode. So in addition to using this you should for the moment disable bitcode compilation in XCode.
 
 The fix is based on the [Facebook docs](https://developers.facebook.com/docs/ios/ios9).
 
