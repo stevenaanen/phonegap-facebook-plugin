@@ -1,6 +1,8 @@
 # Apache Cordova Facebook Plugin
 
-This is the official plugin for Facebook in Apache Cordova/PhoneGap!
+This is a fork of the official plugin for Facebook in Apache Cordova/PhoneGap! I made it to fix issues with iOS 9 with respect to App Transport Security and [canOpenURL](https://developer.apple.com/videos/wwdc/2015/?id=703). Also see Wizcorp#1116. It basically adds the necessary config to your plist. It does not solve the issues with Bitcode. So in addition to using this you should for the moment disable bitcode compilation in XCode.
+
+The fix is based on the [Facebook docs](https://developers.facebook.com/docs/ios/ios9).
 
 The Facebook plugin for [Apache Cordova](http://incubator.apache.org/cordova/) allows you to use the same JavaScript code in your Cordova application as you use in your web application. However, unlike in the browser, the Cordova application will use the native Facebook app to perform Single Sign On for the user.  If this is not possible then the sign on will degrade gracefully using the standard dialog based authentication.
 
@@ -237,15 +239,15 @@ Using the graph api this is a very simple task:
 Send a photo to a user's feed
 
 ```
-facebookConnectPlugin.showDialog( 
+facebookConnectPlugin.showDialog(
     {
         method: "feed",
         picture:'https://www.google.co.jp/logos/doodles/2014/doodle-4-google-2014-japan-winner-5109465267306496.2-hp.png',
         name:'Test Post',
-        message:'First photo post',    
+        message:'First photo post',
         caption: 'Testing using phonegap plugin',
         description: 'Posting photo using phonegap facebook plugin'
-    }, 
+    },
     function (response) { alert(JSON.stringify(response)) },
     function (response) { alert(JSON.stringify(response)) });
 ```
